@@ -23,16 +23,23 @@ var json = JSON.parse(/* glTF file here */);
 
 // Callbacks for all components, called in order of dependencies
 walker(json, {
-  buffers: function () {
+  buffers: function (buffer, id) {
+    console.log(buffer._buffer); // Only set if buffer is defined as data URL 
+  },
+  materials: function (material, id) {
   
   },
-  materials: function () {
+  images: function (image, id) {
   
   },
-  images: function () {
-  
-  }
   ...
+  default: function (desc, id) {
+    // Callback for all categories that do not have a dedicated callback
+  }
+}, { 
+  // Optional user context object.
+  // Available as 'this' in callbacks
+  context: null, 
 });  
   
 
