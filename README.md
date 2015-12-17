@@ -1,8 +1,10 @@
-# gltf-walker [![Build Status](https://img.shields.io/travis/ksons/gltf-walker/master.svg)](https://travis-ci.org/ksons/gltf-walker)  [![Build Status](https://img.shields.io/npm/l/gltf-walker.svg)](http://opensource.org/licenses/MIT)
+# gltf-walker [![Build Status](https://img.shields.io/travis/ksons/gltf-walker/master.svg)](https://travis-ci.org/ksons/gltf-walker)  [![Build Status](https://img.shields.io/npm/l/gltf-walker.svg)](http://opensource.org/licenses/MIT) [![npm](https://img.shields.io/npm/v/gltf-walker.svg)](https://www.npmjs.com/package/gltf-walker)
 
 This is a convenience library to support processing of [Khronos glTF](https://github.com/KhronosGroup/glTF) files. 
 It is inspired by Fabrice Robinet's [glTF-parser.js](https://github.com/KhronosGroup/glTF/blob/master/loaders/glTF-parser.js) but
 provides some convenience functionality and is available as [NPM package](https://www.npmjs.com/package/gltf-walker).
+
+:warning: The library is not yet complete and the API is likely to change
 
 ## Installation
 
