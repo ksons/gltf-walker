@@ -1,7 +1,8 @@
 # gltf-walker
 
 This is a convenience library to support processing of [Khronos glTF](https://github.com/KhronosGroup/glTF) files. 
-It is inspired by Fabrice Robinet's [glTF-parser.js](https://github.com/KhronosGroup/glTF/blob/master/loaders/glTF-parser.js) but available as [NPM package](https://www.npmjs.com/package/gltf-walker) (and maybe a little bit cleaner).
+It is inspired by Fabrice Robinet's [glTF-parser.js](https://github.com/KhronosGroup/glTF/blob/master/loaders/glTF-parser.js) but
+provides some convenience functionality and is available as [NPM package](https://www.npmjs.com/package/gltf-walker).
 
 ## Installation
 
@@ -11,9 +12,9 @@ It is inspired by Fabrice Robinet's [glTF-parser.js](https://github.com/KhronosG
 ## Functionality
 * Callbacks for all components in order of dependencies textures
 * Resolves named references in JSON to real object references in JavaScript
-    * Warning: Currently only for buffers, bufferViews, materials, accessors, meshes, nodes, scenes, and textures
-* Creates [ArrayBuffer](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) objects from [data URLs](https://en.wikipedia.org/wiki/Data_URI_scheme)
-
+* Buffers: Creates [ArrayBuffer](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer) objects from [data URLs](https://en.wikipedia.org/wiki/Data_URI_scheme)
+* Shaders: Creates strings from [data URLs](https://en.wikipedia.org/wiki/Data_URI_scheme)
+* Resolve relative URIs (optional)
 
 ## Usage
 
@@ -25,6 +26,7 @@ var json = JSON.parse(/* glTF file here */);
 walker(json, {
   buffers: function (buffer, id) {
     console.log(buffer._buffer); // Only set if buffer is defined as data URL 
+    console.log(buffer._uri); // Only set if buffer is not a data URL and baseURL is defined
   },
   materials: function (material, id) {
   
@@ -39,7 +41,10 @@ walker(json, {
 }, { 
   // Optional user context object.
   // Available as 'this' in callbacks
-  context: null, 
+  context: null,
+  // The library will resolve relative
+  // URLs, if this (optional) base URL is defined
+  baseURL: null
 });  
   
 
@@ -47,8 +52,6 @@ walker(json, {
 
 ## TODO
   
-  * Tests and automated builds
-  * Resolve relative URIs (optional)
   * Fetch external resources (optional)
 
 ## License
