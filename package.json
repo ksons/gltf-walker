@@ -1,10 +1,10 @@
 {
   "name": "gltf-walker",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "Module to walk the structure of glTF files",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -R spec"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,11 @@
     "url": "https://github.com/ksons/gltf-walker"
   },
   "homepage": "https://github.com/ksons/gltf-walker",
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "atob": "^2.0.0"
+  },
+  "devDependencies": {
+    "chai": "*",
+    "mocha": "*"
+  }
 }
