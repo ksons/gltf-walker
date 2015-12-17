@@ -20,6 +20,7 @@
     "url": "https://github.com/ksons/gltf-walker"
   },
   "homepage": "https://github.com/ksons/gltf-walker",
-  "dependencies": {},
-  "devDependencies": {}
+  "dependencies": {
+    "atob": "^2.0.0"
+  }
 }
