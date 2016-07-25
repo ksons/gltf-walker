@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/ksons/gltf-walker",
   "dependencies": {
-    "atob": "^2.0.0"
+    "Base64": "^0.3.0"
   },
   "devDependencies": {
     "chai": "*",
